@@ -45,5 +45,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const tetriminoes = [ t1, t2, t3, t4, t5]
 
+    let currentPosition = 4
+    let random = Math.floor(Math.random()*tetriminoes.length)
+    let current = tetriminoes[random][0]
+
+    //draw!
+    function draw() {
+        current.forEach( index =>  {
+            squares[currentPosition + index].classList.add('.tetrimino')
+        })
+    }
+
+    draw()
+
+    //undraw 
+    function undraw() {
+        current.forEach(index => {
+            squares[currentPosition + index].classList.remove('.tetrimino')
+        })
+    }
+
+    timer = setInterval(moveDown, 1250)
+
+    moveDown => {
+        undraw()
+        currentPosition += width
+        draw()
+    } 
+
+    //control
+    function control(e){
+        if(e.keyCode === 37){
+            //left arrow
+            moveLeft()
+        } else if (e.keyCode === 38) {
+            //up arrow
+            rotate()
+        } else if (e.keyCode === 39) {
+            //right arrow
+            moveRight()
+        } else if (e.keyCode === 40) {
+            //down arrow
+            moveDown()
+        }
+    }
+    document.addEventListener('keyup', control)
+
 
 })
