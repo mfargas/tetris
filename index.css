@@ -16,13 +16,19 @@ header{
     text-align: center;
 }
 
+h3{
+    margin-right: 5rem;
+}
+
 button{
-    width: 5rem;
+    width: 8rem;
     height: 3rem;
     border-radius: 50px;
     border-style: none;
     font-family: monospace;
     color: royalblue;
+    margin-right: 4rem;
+    margin-top: 2rem;
 }
 
 .grid{

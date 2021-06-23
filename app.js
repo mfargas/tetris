@@ -43,35 +43,44 @@ document.addEventListener('DOMContentLoaded', () => {
         [width, width + 1, width + 2, width + 3]
     ]
 
-    const tetriminoes = [ t1, t2, t3, t4, t5]
+    const tetriminoes = [t1, t2, t3, t4, t5]
 
     let currentPosition = 4
-    let random = Math.floor(Math.random()*tetriminoes.length)
-    let current = tetriminoes[random][0]
+    let currentRotation = 1
+    let random = Math.floor(Math.random() * tetriminoes.length)
+    let current = tetriminoes[random][currentRotation]
 
     //draw!
     function draw() {
-        current.forEach( index =>  {
-            squares[currentPosition + index].classList.add('.tetrimino')
+        current.forEach(index =>  {
+            squares[currentPosition + index].classList.add('tetrimino');
         })
     }
-
-    draw()
 
     //undraw 
     function undraw() {
         current.forEach(index => {
-            squares[currentPosition + index].classList.remove('.tetrimino')
+            squares[currentPosition + index].classList.remove('tetrimino');
         })
     }
 
-    timer = setInterval(moveDown, 1250)
+    let timer = setInterval(moveDown, 1250)
 
-    moveDown => {
+    function moveDown() {
         undraw()
         currentPosition += width
         draw()
-    } 
+    }
+    
+    function freeze() {
+        if(current.some(index => squares[currentPosition + index + width].classList.contains('bottom'))){
+            current.forEach(index => squares[currentPosition + index].classList.add('bottom'))
+            random = Math.floor(Math.random() * tetriminoes.length)
+            current = tetriminoes[random][currentRotation]
+            currentPosition = 4
+            draw()
+        }
+    }
 
     //control
     function control(e){
@@ -91,5 +100,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.addEventListener('keyup', control)
 
+    function moveRight() {
+        undraw()
+        const rightEdge = current.some(index => (currentPosition + index) % width === width - 1)
+        if (!rightEdge) {
+            currentPosition += 1
+        }
+        if (current.some(index => squares[currentPosition + index].classList.contains('bottom'))) {
+            currentPosition -= 1
+        }
+        draw()
+    }
 
+    function moveLeft() {
+        undraw()
+        const leftEdge = current.some(index => (currentPosition + index) % width === 0)
+        if(!leftEdge){
+            currentPosition -= 1
+        }
+        if(current.some(index => squares[currentPosition + index].classList.contains('bottom'))){
+            currentPosition += 1
+        }
+        draw()
+    }
+
+    function rotate() {
+        undraw()
+        currentRotation ++
+        if(currentRotation === current.length) {
+            currentRotation = 0
+        }
+        current = tetriminoes[random][currentRotation]
+        draw()
+    }
 })
