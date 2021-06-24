@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const tetriminoes = [t1, t2, t3, t4, t5]
 
-    let currentPosition = 4
+    let currentPosition = 2
     let currentRotation = 1
     let random = Math.floor(Math.random() * tetriminoes.length)
     let current = tetriminoes[random][currentRotation]
@@ -53,14 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
     //draw!
     function draw() {
         current.forEach(index =>  {
-            squares[currentPosition + index].classList.add('tetrimino');
+            squares[currentPosition+index].classList.add('tetrimino')
         })
     }
 
     //undraw 
     function undraw() {
         current.forEach(index => {
-            squares[currentPosition + index].classList.remove('tetrimino');
+            squares[currentPosition+index].classList.remove('tetrimino')
         })
     }
 
@@ -133,4 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
         current = tetriminoes[random][currentRotation]
         draw()
     }
+
+    
 })
