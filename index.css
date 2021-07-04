@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@100&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -5,8 +7,9 @@
 }
 
 body{
-    background-color: paleturquoise;
-    font-family: monospace;
+    background-color: rgb(212, 255, 255);
+    color: rgb(2, 2, 102);
+    font-family: 'Tourney', cursive;
     font-size: 16px;
     text-align: right;
 }
@@ -14,6 +17,12 @@ body{
 header{
     height: 20vh;
     text-align: center;
+    display: flex;
+}
+
+header h1{
+    margin: auto;
+    font-size: 2.5rem;
 }
 
 h3{
@@ -37,7 +46,7 @@ button{
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    background-color: black;
+    background-color: rgb(2, 2, 102);
 }
 
 .grid div{
