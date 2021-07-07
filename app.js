@@ -1,6 +1,14 @@
 //tetris game
 //exercise for creating javascript apps and marrying them to a webpage
 
+const canvas = document.getElementById('game-board');
+const cntx = canvas.getContext('2d');
+
+cntx.canvas.width = COLS * BLOCK_SIZE;
+cntx.canvas.height = ROWS * BLOCK_SIZE;
+cntx.scale(BLOCK_SIZE, BLOCK_SIZE);
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
     let squares = Array.from(document.querySelectorAll('.grid div'))

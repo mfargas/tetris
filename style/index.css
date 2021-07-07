@@ -40,6 +40,10 @@ button{
     margin-top: 2rem;
 }
 
+.board{
+    border: solid 5px;
+}
+
 .grid{
     width: 200px;
     height: 400px;
