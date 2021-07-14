@@ -1,5 +1,4 @@
-import COLS from './constants.js';
-import ROWS from './constants.js';
+import { COLS, ROWS } from './constants.js';
 
 export default class Board {
     reset() {

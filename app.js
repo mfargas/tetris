@@ -1,7 +1,7 @@
 //tetris game
 //exercise for creating javascript apps and marrying them to a webpage
 import { COLS, ROWS, BLOCK_SIZE } from './js/constants.js';
-import { Board } from './js/board';
+import { Board } from './js/board.js';
 
 const canvas = document.getElementById('game-board');
 const cntx = canvas.getContext('2d');
