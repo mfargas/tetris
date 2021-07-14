@@ -1,4 +1,7 @@
-class Board {
+import COLS from './constants.js';
+import ROWS from './constants.js';
+
+export default class Board {
     reset() {
         this.grid = this.getEmptyBoard();
     }
