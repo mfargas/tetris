@@ -48,8 +48,17 @@ Users should be able to:
 
 ### What I learned
 
+When using ES6 modules, it is important to let your browser know it will expect to receive modules. This is done through the type = "module" tag in the html script linking the Tetris app.
+
+I received a "Uncaught SyntaxError: Cannot use import statement outside a module" error and this fixed it right up.
 ```html
-<h1>Some HTML code I'm proud of</h1>
+</main>
+<script type="module" src="./app.js" type="text/javascript"> </script>
+<script type="module" src="./js/constants.js"> </script>
+<script type="module" src="./js/board.js"> </script>
+<script type="module" src="./js/piece.js"> </script>
+</body>
+</html>
 ```
 ```css
 .proud-of-this-css {
