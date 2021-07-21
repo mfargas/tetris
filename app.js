@@ -7,7 +7,7 @@ import { Piece } from './js/pieces.js';
 const canvas = document.getElementById('game-board');
 const ctx = canvas.getContext('2d');
 
-moves = {
+let moves = {
     [KEY.SPACE]: t => ({ ...t, y: t.y + 1}),
     [KEY.LEFT]: t => ({ ...t, x: t.x - 1 }),
     [KEY.RIGHT]: t => ({ ...t, x: t.x + 1 }),
