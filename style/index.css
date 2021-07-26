@@ -31,18 +31,18 @@ main{
 }
 
 .panel h3{
-    margin-right: 5rem;
+    margin: auto;
+    text-align: center;
 }
 
 button{
     width: 8rem;
     height: 3rem;
+    margin: auto;
     border-radius: 50px;
-    border-style: none;
+    border: 1px solid white;
     font-family: monospace;
     color: royalblue;
-    margin-right: 4rem;
-    margin-top: 2rem;
 }
 
 .grid{

@@ -1,12 +1,13 @@
-export class Piece{
-x;
-y;
-ctx;
-color;
-shape;
+import {COLORS} from './constants.js';
+
+export default class Piece{
+    x
+    y
+    ctx
+    color
+    shape
 
     constructor(ctx){
-        this.ctx = ctx;
         this.color = 'red';
         this.shape = [
             [2, 0, 0],

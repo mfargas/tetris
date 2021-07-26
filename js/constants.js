@@ -14,6 +14,8 @@ export const COLORS = [
     'red'
 ];
 
+Object.freeze(COLORS);
+
 export const KEY = {
     SPACE: 32,
     LEFT: 37,
