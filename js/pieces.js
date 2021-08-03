@@ -18,7 +18,7 @@ export default class Piece{
         this.y = 0;
     }
 
-    draw() {
+    draw(e) {
         this.ctx.fillStyle = this.color;
         this.shape.forEach((row, y) => {
             row.forEach((value, x) => {

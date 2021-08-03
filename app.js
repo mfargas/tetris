@@ -48,7 +48,7 @@ function reset(){
 
 
 const startButton = document.querySelector('#start-button');
-startButton.addEventListener('click', function play() {
+startButton.addEventListener('click', function play(e) {
 
     board.reset();
     console.log(board.grid);
