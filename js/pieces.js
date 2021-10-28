@@ -1,24 +1,19 @@
-import {COLORS} from './constants.js';
+// import {COLORS} from './constants.js';
 
-export default class Piece{
-    x
-    y
-    ctx
-    color
-    shape
-
+export class Piece{
     constructor(ctx){
-        this.color = 'red';
+        this.ctx = ctx;
+        this.color = 'pink';
         this.shape = [
             [2, 0, 0],
             [2, 2, 2],
             [0, 0, 0]
         ];
         this.x = 3;
-        this.y = 0;
+        this.y = 1;
     }
 
-    draw(e) {
+    draw() {
         this.ctx.fillStyle = this.color;
         this.shape.forEach((row, y) => {
             row.forEach((value, x) => {

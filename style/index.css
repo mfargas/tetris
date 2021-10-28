@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: rgb(212, 255, 255);
+    background-color: rgb(110, 202, 202);
     color: rgb(2, 2, 102);
     font-family: 'Tourney', cursive;
     font-size: 16px;
@@ -30,12 +30,23 @@ main{
     justify-content: center;
 }
 
+.board{
+    border: solid 5px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 320px 200px;
+    justify-content: center;
+}
+
+
 .panel h3{
     margin: auto;
     text-align: center;
 }
 
-button{
+.start-button{
     width: 8rem;
     height: 3rem;
     margin: auto;
@@ -45,12 +56,12 @@ button{
     color: royalblue;
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: 320px 200px;
-    justify-content: center;
+.start-button:hover{
+    background-color: greenyellow;
+    cursor: pointer;
 }
 
-.board{
-    border: solid 5px;
+.start-button:active{
+    background-color: rgb(20, 150, 20);
 }
+

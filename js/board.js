@@ -1,9 +1,12 @@
 import { COLS, ROWS } from './constants.js';
+export class Board {
+    constructor(ctx){
+        this.ctx = ctx
+    }
 
-export default class Board {
-    ctx;
-    grid;
-    piece;
+    // ctx;
+    // grid;
+    // piece;
     
     reset() {
         this.grid = this.getEmptyBoard();
@@ -11,10 +14,11 @@ export default class Board {
 
     getEmptyBoard(){
         return Array.from(
-            {length: ROWS}, () => Array(COLS).fill(0)
+            {length: ROWS}, (COLS) => Array(COLS).fill(0)
         ); 
     }
 
+    //checking if inside walls here
     valid(t){
         return t.shape.every((row, dy) => {
             return row.every((value, dx) => {
