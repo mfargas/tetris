@@ -14,7 +14,6 @@ const moves = {
     [KEY.DOWN]: t => ({ ...t, y: t.y - 1 })
 };
 
-
 ctx.canvas.width = COLS * BLOCK_SIZE;
 ctx.canvas.height = ROWS * BLOCK_SIZE;
 ctx.scale(BLOCK_SIZE, BLOCK_SIZE);
@@ -41,7 +40,6 @@ function addEventListener(){
             }
         }
     });
-    
 }
 
 
@@ -54,11 +52,11 @@ function play(){
     console.table(board.grid);
 
     let piece = new Piece(ctx);
-    piece.draw();
+    piece.draw(ctx);
 
     board.piece = piece;
 }
 
 ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 let btn = document.querySelector('.start-button');
-btn.addEventListener('click', play, false);
+btn.addEventListener('click', play);
